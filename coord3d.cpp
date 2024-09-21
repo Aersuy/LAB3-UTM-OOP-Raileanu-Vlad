@@ -99,3 +99,52 @@ bool operator==(const Coord3d& one,const Coord3d& second)
    }
 return output;
 }
+bool operator!=(const Coord3d& one,const Coord3d& second)
+{ bool output = false;
+   if (one.c_x != second.c_x)
+   {
+    output = true;
+   }
+   if (one.c_y != second.c_y)
+   {
+    output = true;
+   }
+   if (one.c_z != second.c_z)
+   {
+    output = true;
+   }
+return output;
+}
+bool operator<(const Coord3d& one,const Coord3d& second)
+{ bool output = true;
+   if (!(one.c_x < second.c_x))
+   {
+    output = false;
+   }
+   if (!(one.c_y < second.c_y))
+   {
+    output = false;
+   }
+   if (!(one.c_z < second.c_z))
+   {
+    output = false;
+   }
+return output;
+}
+
+bool operator>(const Coord3d& one,const Coord3d& second)
+{ bool output = true;
+   if (!(one.c_x > second.c_x))
+   {
+    output = false;
+   }
+   if (!(one.c_y > second.c_y))
+   {
+    output = false;
+   }
+   if (!(one.c_z > second.c_z))
+   {
+    output = false;
+   }
+return output;
+}

@@ -18,7 +18,7 @@ public:
     Coord3d operator=(const Coord3d&);
 
    friend bool operator==(const Coord3d&,const Coord3d&);
-   friend bool operator!=(const Coord3d&,const Coord3d);
-   friend bool operator<(const Coord3d&,const Coord3d);
-   friend bool operator<(const Coord3d&,const Coord3d);
+   friend bool operator!=(const Coord3d&,const Coord3d&);
+   friend bool operator<(const Coord3d&,const Coord3d&);
+   friend bool operator>(const Coord3d&,const Coord3d&);
 };
