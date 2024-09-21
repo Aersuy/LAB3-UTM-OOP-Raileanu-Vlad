@@ -8,13 +8,13 @@ public:
     Coord3d();
     Coord3d(int);
     Coord3d(int,int,int);
-    ~Coord3d();
+    ~Coord3d() = default;
+    void readCoords();
+    Coord3d operator+(double);
+    Coord3d operator+(const Coord3d&);
+    Coord3d operator-(double);
+    Coord3d operator-(const Coord3d&);
+    Coord3d operator=(double);
+    Coord3d operator=(const Coord3d&);
+
 };
-
-Coord3d::Coord3d(/* args */)
-{
-}
-
-Coord3d::~Coord3d()
-{
-}
