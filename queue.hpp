@@ -17,6 +17,7 @@ public:
     void printElem();
     bool IsEmpty();
     bool IsFull();
+    Queue operator+(const Queue&);
 };
 
 

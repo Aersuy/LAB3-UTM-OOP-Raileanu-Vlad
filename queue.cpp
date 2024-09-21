@@ -1,5 +1,5 @@
 #include "queue.hpp"
-
+#include <iostream>
 Queue::Queue()
 {
     c_maxSize = DEFAULT_QUEUE_SIZE;
@@ -72,4 +72,26 @@ void Queue::Pop()
     }
 
     c_top--;  
+}
+
+Queue Queue::operator+(const Queue& other)
+{  int newSize = c_maxSize + other.c_maxSize - 1;
+    Queue newQueue{newSize};
+    for (int iterator1 = 0; iterator1 <= c_top; iterator1++)
+    {
+        newQueue.Push(c_elements[iterator1]);
+    }
+     for (int iterator1 = 0; iterator1 <= other.c_top; iterator1++)
+    {
+        newQueue.Push(other.c_elements[iterator1]);
+    }
+return newQueue;
+}
+void Queue::printElem()
+{
+      for (int i = 0; i <= c_top; i++)
+     {
+         std::cout << c_elements[i] << '\n';
+     }
+   
 }
