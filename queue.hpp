@@ -1,5 +1,6 @@
 #pragma once
 #define DEFAULT_QUEUE_SIZE 9
+#include <iostream>
 class Queue {
 private:
     int* c_elements;   
@@ -26,6 +27,8 @@ public:
    friend bool operator!=(const Queue&,const Queue&);
    friend bool operator<(const Queue&,const Queue&);
    friend bool operator>(const Queue&,const Queue&);
+   friend std::ostream& operator<< (std::ostream&, const Queue&);
+   friend std::istream& operator>> (std::istream&, Queue&);
 };
 
 

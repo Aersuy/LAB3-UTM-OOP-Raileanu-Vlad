@@ -41,7 +41,7 @@ bool Queue::IsEmpty()
 }
 bool Queue::IsFull()
 {
-    if (c_top == c_maxSize)
+    if (c_top == c_maxSize-1)
     {
         return true;
     }
@@ -185,4 +185,22 @@ else
     return false;
 }
 
+}
+std::ostream& operator<< (std::ostream& out, const Queue& q)
+{
+    for (int iterator = 0; iterator <= q.c_top; iterator++)
+    {
+        out << q.c_elements[iterator] << '\n';
+    }
+    return out;
+}
+std::istream& operator>>(std::istream& in,Queue& q)
+{
+    for (int iterator = 0; iterator < q.c_maxSize; iterator++)
+    {
+        int num;
+        in >> num;
+        q.Push(num);
+    }
+    return in;
 }

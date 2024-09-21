@@ -5,23 +5,11 @@
 int main()
 {
       Queue n1{3};
-      n1.Push(5);
-      n1.Push(6);
-      n1.Push(7);
-   
+      std::cin >> n1;
+      std::cout << n1;
       
       Queue n2{};
-      n2 = n1;
-      n2.Push(10);
-      n1.Push(1);
-      if (n1 < n2)
-      {
-       std::cout << "Merge \n";
-      }
-      else
-      {
-        std::cout << "Dea pula \n";
-      }
+      
       
     return 0;
 }
