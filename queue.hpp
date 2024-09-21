@@ -19,6 +19,13 @@ public:
     bool IsFull();
     Queue operator+(const Queue&);
     Queue operator=(const Queue&);
+    int norm() const;
+
+    
+   friend bool operator==(const Queue&,const Queue&);
+   friend bool operator!=(const Queue&,const Queue&);
+   friend bool operator<(const Queue&,const Queue&);
+   friend bool operator>(const Queue&,const Queue&);
 };
 
 

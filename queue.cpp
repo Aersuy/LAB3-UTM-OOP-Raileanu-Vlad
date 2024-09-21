@@ -1,5 +1,7 @@
+#pragma once
 #include "queue.hpp"
 #include <iostream>
+#include <stdbool.h>
 Queue::Queue()
 {
     c_maxSize = DEFAULT_QUEUE_SIZE;
@@ -106,4 +108,81 @@ Queue Queue::operator=(const Queue& other)
     }
     
 return *this;
+}
+bool operator==(const Queue& q1, const Queue& q2)
+{
+   if (q1.c_maxSize != q2.c_maxSize)
+   {
+    return false;
+   }
+   if (q1.c_top != q2.c_top)
+   {
+    return false;
+   }
+   for (int iterator = 0; iterator <= q1.c_top; iterator++)
+   {
+    if (q1.c_elements[iterator]!=q2.c_elements[iterator])
+    {
+        return 0;
+    }
+   }
+   return true;
+}
+bool operator!=(const Queue& q1, const Queue& q2)
+{
+   if (q1.c_maxSize == q2.c_maxSize)
+   {
+    return false;
+   }
+   if (q1.c_top == q2.c_top)
+   {
+    return false;
+   }
+   for (int iterator = 0; iterator <= q1.c_top; iterator++)
+   {
+    if (q1.c_elements[iterator] == q2.c_elements[iterator])
+    {
+        return 0;
+    }
+   }
+   return true;
+}
+
+bool operator<(const Queue& q1, const Queue& q2)
+{
+    if (q1.norm() < q2.norm())
+{
+    return true;
+}
+else
+{
+    return false;
+}
+}
+
+int Queue::norm() const
+{
+    int sum{0};
+    for (int iterator = 0; iterator <= c_top; iterator++) 
+    {
+        sum += c_elements[iterator];
+    }
+
+    if (c_top == -1) 
+    {
+        return 0;
+    }
+
+    return sum;  
+}
+bool operator>(const Queue& q1, const Queue& q2)
+{ if (q1.norm() > q2.norm())
+{
+    return true;
+}
+else
+{
+    return false;
+}
+
 }
