@@ -4,12 +4,29 @@
 #include "coord3d.cpp"
 int main()
 {
-      Queue n1{3};
-      std::cin >> n1;
-      std::cout << n1;
+      Coord3d c1{1,2,3};
+      Coord3d c2{9,10,12};
+      c1 = c1 + 5;
+      c1.readCoords();
+
+      c2 = c2 - 2;
+      c2.readCoords();
+
+      c1 = 2;
+      c1.readCoords();
+
+      if (c1!=c2)
+      {
+        std::cout << "Cordonatele sunt diferite \n";
+      }
+      if (c)
+      {
+        /* code */
+      }
       
-      Queue n2{};
       
+
+
       
     return 0;
 }

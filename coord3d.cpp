@@ -8,13 +8,13 @@ Coord3d::Coord3d()
     c_y = 1;
     c_z = 1;
 }
-Coord3d::Coord3d(int input)
+Coord3d::Coord3d(double input)
 {
     c_x = input;
     c_y = input;
     c_z = input;
 }
-Coord3d::Coord3d(int x,int y, int z)
+Coord3d::Coord3d(double x,double y,double z)
 {
     c_x = x;
     c_y = y;
@@ -22,11 +22,11 @@ Coord3d::Coord3d(int x,int y, int z)
 }
 void Coord3d::readCoords()
 {
-    std::cout << " x : " << c_x << "\n y : " << c_y << "\n y : " << c_z << '\n';
+    std::cout << " x : " << c_x << "\n y : " << c_y << "\n z : " << c_z << '\n';
 }
 Coord3d Coord3d::operator+(double data)
 {
-    int tx,ty,tz;
+    double tx,ty,tz;
     tx = c_x + data;
     ty = c_y + data;
     tz = c_z + data;
@@ -35,7 +35,7 @@ Coord3d Coord3d::operator+(double data)
 }
 Coord3d Coord3d::operator+(const Coord3d& other)
 {
-    int tx,ty,tz;
+    double tx,ty,tz;
     tx = c_x + other.c_x;
     ty = c_y + other.c_y;
     tz = c_z + other.c_z;
@@ -44,7 +44,7 @@ Coord3d Coord3d::operator+(const Coord3d& other)
 }
 Coord3d Coord3d::operator-(double data)
 {
-    int tx,ty,tz;
+    double tx,ty,tz;
     tx = c_x - data;
     ty = c_y - data;
     tz = c_z - data;
@@ -53,7 +53,7 @@ Coord3d Coord3d::operator-(double data)
 }
 Coord3d Coord3d::operator-(const Coord3d& other)
 {
-    int tx,ty,tz;
+    double tx,ty,tz;
     tx = c_x - other.c_x;
     ty = c_y - other.c_y;
     tz = c_z - other.c_z;
@@ -61,27 +61,20 @@ Coord3d Coord3d::operator-(const Coord3d& other)
     return n;
 }
 
-Coord3d Coord3d::operator=(double data)
+void Coord3d::operator=(double data)
 {
-     int tx,ty,tz;
-    tx = data;
-    ty = data;
-    tz = data;
-    Coord3d n{tx,ty,tz};
-    return n;
-
+    
+    this->c_x = data;
+    this->c_y = data;
+    this->c_z = data;
 
 }
-Coord3d Coord3d::operator=(const Coord3d& other)
+void Coord3d::operator=(const Coord3d& other)
 {
-     int tx,ty,tz;
-    tx = other.c_x;
-    ty = other.c_y;
-    tz = other.c_z;
-    Coord3d n{tx,ty,tz};
-    return n;
 
-
+    this->c_x = other.c_x;
+    this->c_y = other.c_y;
+    this->c_z = other.c_z;
 }
 bool operator==(const Coord3d& one,const Coord3d& second)
 { bool output = true;
