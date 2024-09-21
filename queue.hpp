@@ -18,6 +18,7 @@ public:
     bool IsEmpty();
     bool IsFull();
     Queue operator+(const Queue&);
+    Queue operator=(const Queue&);
 };
 
 

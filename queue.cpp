@@ -95,3 +95,15 @@ void Queue::printElem()
      }
    
 }
+Queue Queue::operator=(const Queue& other)
+{
+    c_maxSize = other.c_maxSize;
+    c_top = other.c_top;
+    c_elements = new int[c_top];
+    for (int iterator = 0; iterator <= c_top; iterator++)
+    {
+        c_elements[iterator] = other.c_elements[iterator];
+    }
+    
+return *this;
+}
