@@ -1,6 +1,7 @@
 #pragma once
 #include "coord3d.hpp"
 #include <iostream>
+#include <stdbool.h>
 Coord3d::Coord3d()
 {
     c_x = 1;
@@ -81,4 +82,20 @@ Coord3d Coord3d::operator=(const Coord3d& other)
     return n;
 
 
+}
+bool operator==(const Coord3d& one,const Coord3d& second)
+{ bool output = true;
+   if (one.c_x != second.c_x)
+   {
+    output = false;
+   }
+   if (one.c_y != second.c_y)
+   {
+    output = false;
+   }
+   if (one.c_z != second.c_z)
+   {
+    output = false;
+   }
+return output;
 }
