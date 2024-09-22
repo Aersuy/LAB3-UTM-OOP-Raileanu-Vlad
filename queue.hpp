@@ -1,5 +1,5 @@
 #pragma once
-#define DEFAULT_QUEUE_SIZE 9
+#define DEFAULT_QUEUE_SIZE 3
 #include <iostream>
 class Queue {
 private:

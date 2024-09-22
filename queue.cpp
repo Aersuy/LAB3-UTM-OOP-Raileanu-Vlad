@@ -41,7 +41,7 @@ bool Queue::IsEmpty()
 }
 bool Queue::IsFull()
 {
-    if (c_top == c_maxSize-1)
+    if (c_top == c_maxSize)
     {
         return true;
     }
@@ -123,11 +123,12 @@ bool operator==(const Queue& q1, const Queue& q2)
    {
     if (q1.c_elements[iterator]!=q2.c_elements[iterator])
     {
-        return 0;
+        return false;
     }
    }
    return true;
-}
+} 
+
 bool operator!=(const Queue& q1, const Queue& q2)
 {
    if (q1.c_maxSize == q2.c_maxSize)
