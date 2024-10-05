@@ -106,9 +106,9 @@ int main()
                   break;
 
                   case 6:
-                  std::cout << "q1 " << q1 << '\n';
-                  std::cout << "q2 " << q2 << '\n';
-                  std::cout << "q3 " << q3 << '\n';
+                  std::cout << "q1 \n" << q1 << '\n';
+                  std::cout << "q2 \n" << q2 << '\n';
+                  std::cout << "q3 \n" << q3 << '\n';
                   break;
                   default:
                     break;

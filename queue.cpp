@@ -191,7 +191,7 @@ std::ostream& operator<< (std::ostream& out, const Queue& q)
 {
     for (int iterator = 0; iterator <= q.c_top; iterator++)
     {
-        out << q.c_elements[iterator] << '\n';
+        out  <<  q.c_elements[iterator] << '\n';
     }
     return out;
 }
